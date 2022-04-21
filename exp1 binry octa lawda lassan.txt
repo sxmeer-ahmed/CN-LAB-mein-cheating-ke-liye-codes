@@ -1,0 +1,68 @@
+(a) Binary Notation
+#include<iostream>
+#include<sstream>
+#include<bitset>
+using namespace std;
+int main()
+{
+int choice;
+cout << "Which operation you want to perform : \n";
+cout << "1.Decimal to Binary\n";
+cout << "2.Binary to Decimal\n";
+cin >> choice;
+string ip;
+cin >> ip;
+stringstream object(ip);
+string temp_number;
+int i = 3;
+
+while (getline(object, temp_number, '.'))
+{
+if (choice == 1)
+{
+cout << bitset<8> (stoi(temp_number)).to_string() << ((i != 0) ? "." : "");
+
+4
+}
+else
+{
+cout << stoi(temp_number, 0, 2) << ((i != 0) ? "." : "");
+}--i;
+}
+return 0;
+}
+
+(a) Octal Notation
+#include<iostream>
+#include<sstream>
+using namespace std;
+int main()
+{
+int choice;
+cout << "Which operation you want to perform : \n";
+cout << "1.Decimal to Octal\n";
+cout << "2.Octal to Decimal\n";
+cin >> choice;
+string ip;
+cin >> ip;
+stringstream object(ip);
+string temp_number;
+int i = 3;
+while (getline(object, temp_number, '.'))
+{
+if (choice == 1)
+{
+stringstream octal_numer;
+octal_numer << oct << stoi(temp_number);
+
+4
+
+cout << octal_numer.str() << ((i != 0) ? "." : "");
+}
+else
+{
+cout << stoi(temp_number, 0, 8) << ((i != 0) ? "." : "");
+}--i;
+}
+return 0;
+}
